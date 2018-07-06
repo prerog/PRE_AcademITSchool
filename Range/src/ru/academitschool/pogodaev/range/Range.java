@@ -1,35 +1,35 @@
 package ru.academitschool.pogodaev.range;
 
-class Range {
+public class Range {
     private double from;
     private double to;
 
-    Range(double from, double to) {
+    public Range(double from, double to) {
         this.from = from;
         this.to = to;
     }
 
-    void setTo(double to) {
+    public void setTo(double to) {
         this.to = to;
     }
 
-    double getTo() {
+    public double getTo() {
         return to;
     }
 
-    void setFrom(double from) {
+    public void setFrom(double from) {
         this.from = from;
     }
 
-    double getFrom() {
+    public double getFrom() {
         return from;
     }
 
-    double getLength() {
+    public double getLength() {
         return to - from;
     }
 
-    boolean isInside(double number) {
+    public boolean isInside(double number) {
         return number >= from && number <= to;
     }
 }

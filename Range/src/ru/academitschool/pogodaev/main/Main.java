@@ -1,4 +1,6 @@
-package ru.academitschool.pogodaev.range;
+package ru.academitschool.pogodaev.main;
+
+import ru.academitschool.pogodaev.range.Range;
 
 import java.util.Scanner;
 
