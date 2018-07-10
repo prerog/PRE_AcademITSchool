@@ -2,22 +2,16 @@ package ru.academitschool.pogodaev.main;
 
 import ru.academitschool.pogodaev.range.Range;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите начало первого интервала: ");
-        double fromFirstInterval = scanner.nextDouble();
-        System.out.println("Введите конец первого интервала: ");
-        double toFirstInterval = scanner.nextDouble();
-        System.out.println("Введите начало второго интервала: ");
-        double fromSecondInterval = scanner.nextDouble();
-        System.out.println("Введите конец второго интервала: ");
-        double toSecondInterval = scanner.nextDouble();
-        System.out.println("Введите проверяемое число: ");
-        double number = scanner.nextDouble();
+        double fromFirstInterval = 2;
+        double toFirstInterval = 5;
+        double fromSecondInterval = 3;
+        double toSecondInterval = 8;
+        double number = 4;
 
         Range firstInterval = new Range(fromFirstInterval, toFirstInterval);
         Range secondInterval = new Range(fromSecondInterval, toSecondInterval);
@@ -37,5 +31,11 @@ public class Main {
         if (secondInterval.isInside(number)) {
             System.out.println("Проверяемое число во втором интервале");
         }
+
+        double fromInsertionInterval = Range.getIntersectionFrom(firstInterval, secondInterval);
+        double toInsertionInterval = Range.getIntersectionTo(firstInterval, secondInterval);
+
+        Range insertionInterval = new Range(fromInsertionInterval, toInsertionInterval);
+        System.out.println("Пересечение интервалов " + insertionInterval.getLength());
     }
 }
